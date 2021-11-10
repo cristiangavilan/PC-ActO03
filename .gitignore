@@ -1,0 +1,47 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/Practica/TP01/nbproject/private/
+/Practica/TP01/build/
+/Teoría/TheoricExamples/nbproject/private/
+/Teoría/TheoricExamples/build/
+/Practica/TP02/nbproject/private/
+/Practica/TP02/build/
+/Practica/TP03/nbproject/private/
+/Practica/TP03/build/
+/Practica/TP04/nbproject/private/
+/Practica/TP04/build/
+/Practica/Parciales/nbproject/private/
+/Practica/Parciales/build/
+/Practica/Parciales2021/nbproject/private/
+/Practica/Gavilan_52944/nbproject/private/
+/Practica/Extras/nbproject/private/
+/Practica/Extras/build/
+/Practica/Parciales2021/build/
+/Practica/TPO02/nbproject/private/
+/Practica/TPO02/build/
+/Practica/TP05/nbproject/private/
+/Practica/TP05/build/
+/Practica/TP06/nbproject/private/
+/Practica/TP06/build/
+/Practica/ActividadObligatoria3/nbproject/private/
+/Practica/ActividadObligatoria3/build/
