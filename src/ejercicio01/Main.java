@@ -19,7 +19,7 @@ public class Main {
     Parte parte3 = new Parte(3);
     
     int maxCarpinteros1 = 4;
-    int maxCarpinteros2 = 5;
+    int maxCarpinteros2 = 6;
     int maxCarpinteros3 = 3;
     
     Carpintero[] carpinteros1 = new Carpintero[maxCarpinteros1];
