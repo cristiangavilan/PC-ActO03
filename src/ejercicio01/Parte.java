@@ -52,7 +52,7 @@ public class Parte {
         Logger.getLogger(Parte.class.getName()).log(Level.SEVERE, null, ex);
       }
     }
-    this.avance += 1;
+    this.avance += 10;
   }
 
   public void finalizarAvance() {
