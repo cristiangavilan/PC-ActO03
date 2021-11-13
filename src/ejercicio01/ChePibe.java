@@ -12,22 +12,28 @@ import java.util.logging.Logger;
  *
  * @author Cristian
  */
-public class ChePibe implements Runnable {
-  private final String name;
-  private Parte parte;
+public class ChePibe extends Empleado implements Runnable {
+  private final Parte parte;
+  private final LineaEnsamble lineaEnsamble;
+  public static final String ANSI_GREEN = "\u001B[32m";
 
-  public ChePibe(String name, Parte parte) {
-    this.name = name;
+  public ChePibe(String name, Parte parte, LineaEnsamble lineaEnsamble) {
+    super(name);
     this.parte = parte;
+    this.lineaEnsamble = lineaEnsamble;
   }
    @Override
   public void run() {
    while (true) {
      try {
        this.parte.iniciarDisponerPieza();
-       System.out.println(this.name + " dispone de: " + this.parte.toString());
+       System.out.println(ANSI_GREEN + this.name + " dispone de: " + this.parte.toString());
        Thread.sleep((int) Math.floor(Math.random() * 2000));
        this.parte.finalizarDisponerPieza();
+       this.lineaEnsamble.iniciarSubirParte(this.parte.toString());
+       System.out.println(ANSI_GREEN + this.name + " sube a linea de produccion " + this.parte.toString());
+       Thread.sleep((int) Math.floor(Math.random() * 2000));
+       this.lineaEnsamble.finalizarSubirParte();
      } catch (InterruptedException ex) {
        Logger.getLogger(ChePibe.class.getName()).log(Level.SEVERE, null, ex);
      }

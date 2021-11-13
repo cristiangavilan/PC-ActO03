@@ -12,13 +12,13 @@ import java.util.logging.Logger;
  *
  * @author Cristian
  */
-public class Carpintero implements Runnable {
+public class Carpintero extends Empleado implements Runnable {
 
-  private final String name;
-  private Parte parte;
+  private final Parte parte;
+  public static final String ANSI_CYAN = "\u001B[36m";
 
   public Carpintero(String name, Parte parte) {
-    this.name = name;
+    super(name);
     this.parte = parte;
   }
 
@@ -28,7 +28,7 @@ public class Carpintero implements Runnable {
     while (true) {
       try {
         this.parte.iniciarAvance();
-        System.out.println(this.name + " trabaja en: " + this.parte.toString() + " " + this.parte.getAvance() + "%");
+        System.out.println(ANSI_CYAN + this.name + " trabaja en: " + this.parte.toString() + " " + this.parte.getAvance() + "%");
         Thread.sleep((int) Math.floor(Math.random() * 500));
         this.parte.finalizarAvance();
       } catch (InterruptedException ex) {

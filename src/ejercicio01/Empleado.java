@@ -9,6 +9,11 @@ package ejercicio01;
  *
  * @author Cristian
  */
-public class Partes {
+public class Empleado {
+  protected String name;
+
+  public Empleado(String name) {
+    this.name = name;
+  }
   
 }
