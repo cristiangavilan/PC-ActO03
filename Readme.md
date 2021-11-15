@@ -6,7 +6,7 @@
 
 ### **Desarrollo: 10/11/2021 .. 15/11/2021**
 
-> Integrantes: Cristian Gavilan, ...
+> Integrantes: Cristian Gavilan, Nicolás Blanco, Javier A. Egidi Vega
 
 > [Repositorio](https://github.com/cristiangavilan/PC-ActO03)
 
@@ -150,7 +150,7 @@ Lector() {
 
 > Por otra parte en el método de los escritores las liberaciones de los semáforos antes de: _"la escritura en el recurso.."_ produce que no se contemple la exclusión mutua para los escritores, con lo cual difícilmente los lectores puedan progresar en su ejecución.
 >
-> Mi solución contempla la necesidad de usar semáforos de tal forma que el conjunto de los lectores en su totalidad, tenga la misma prioridad que pueda tomar cada escritor en su uso particular.
+> Nuestra solución contempla la necesidad de usar semáforos de tal forma que el conjunto de los lectores en su totalidad, tengan la misma prioridad que pueda tomar cada escritor en su uso particular.
 
 ```java
 
