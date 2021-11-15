@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio02;
+package ejercicio02IV;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class Lector implements Runnable {
 
   private final String name;
-  private Libro libro;
+  private final Libro libro;
 
   public Lector(String name, Libro libro) {
     this.name = name;
@@ -27,26 +27,12 @@ public class Lector implements Runnable {
     while (true) {
       try {
 
-        this.libro.lectores.acquire();
-        this.libro.mutex1.acquire();
-          this.libro.n_lectores ++;
-          
-          if (this.libro.n_lectores == 1) {
-            this.libro.escritores.acquire();
-          }
-          
-        this.libro.mutex1.release();
-        this.libro.lectores.release();
+        this.libro.empezarLeer();
 
-        System.out.println(this.name + " leyendo en el recurso " + this.libro.n_lectores);
+        System.out.println(this.name + " leyendo en el recurso ");
         Thread.sleep((int) Math.floor(Math.random() * 1000));
 
-        this.libro.mutex1.acquire();
-          this.libro.n_lectores --;
-          if (this.libro.n_lectores == 0) {
-            this.libro.escritores.release();
-          }
-        this.libro.mutex1.release();
+        this.libro.terminarLeer();
 
       } catch (InterruptedException ex) {
         Logger.getLogger(Lector.class.getName()).log(Level.SEVERE, null, ex);

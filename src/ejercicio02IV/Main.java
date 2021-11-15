@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio02;
+package ejercicio02IV;
 
 /**
  *
@@ -12,8 +12,8 @@ package ejercicio02;
 public class Main {
   public static void main(String[] args) {
     Libro editorial = new Libro();
-    int maxLectores = 4;
-    int maxEscritores = 3;
+    int maxLectores = 5;
+    int maxEscritores = 2;
     
     Lector[] lectores = new Lector[maxLectores];
     Escritor[] escritores = new Escritor[maxEscritores];
