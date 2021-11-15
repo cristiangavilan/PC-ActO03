@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio02;
+package ejercicio02I;
 
+import ejercicio02.*;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -12,18 +13,14 @@ import java.util.concurrent.Semaphore;
  * @author Cristian
  */
 public class Libro {
-  public Semaphore mutex1, mutex2, lectores, escritores;
-  int n_lectores, n_escritores;
+  public Semaphore mutex, lectores, escritores;
+  int n_lectores;
 
   public Libro() {
-    this.mutex1 = new Semaphore(1);
-    this.mutex2 = new Semaphore(1);
-    this.lectores = new Semaphore(1);
-    this.escritores = new Semaphore(1);
-    
+    this.mutex = new Semaphore(1, true);
+    this.lectores = new Semaphore(1, true);
+    this.escritores = new Semaphore(1, true);
     this.n_lectores = 0;
-    this.n_escritores = 0;
-    
   }
   
 }

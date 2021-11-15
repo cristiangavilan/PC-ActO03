@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio02;
+package ejercicio02I;
 
+import ejercicio02.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,22 +26,14 @@ public class Escritor implements Runnable {
   public void run() {
     while (true) {
       try {
-        this.libro.mutex2.acquire();
-        this.libro.n_escritores ++;
-        if (this.libro.n_escritores == 1)
-          this.libro.lectores.acquire();
-        this.libro.mutex2.release();
-        this.libro.escritores.release();
+        this.libro.mutex.acquire();
+        this.libro.escritores.acquire();
         
         System.out.println(this.name + " escribiendo en el recurso");
         Thread.sleep((int) Math.floor(Math.random() * 2000));
         
         this.libro.escritores.release();
-        this.libro.mutex2.acquire();
-        this.libro.n_escritores --;
-        if (this.libro.n_escritores == 0)
-          this.libro.lectores.release();
-        this.libro.mutex2.release();
+        this.libro.mutex.release();
         
       } catch (InterruptedException ex) {
         Logger.getLogger(Escritor.class.getName()).log(Level.SEVERE, null, ex);
